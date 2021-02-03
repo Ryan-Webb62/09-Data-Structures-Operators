@@ -34,7 +34,64 @@ const restaurant = {
       `Order Recieved! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}.`
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delcious pasta with ${ing1}, ${ing2}, and ${ing3}`
+    );
+  },
 };
+
+// Lecture on the Spread Operator ...
+
+const arr = [7, 8, 9];
+const badNewArray = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArray);
+
+const goodNewArray = [1, 2, ...arr];
+console.log(goodNewArray);
+
+console.log(...goodNewArray);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+// Copy Array
+
+const mainMenuArray = [...restaurant.mainMenu];
+
+// Join two Arrays
+
+const menue = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menue);
+
+// Itterabels: Arrays, Strings, maps, sets, but NOT Objects
+const str = 'Jonas';
+const letters = [...str, ' ', 's'];
+console.log(letters);
+console.log(...str);
+
+// example of using spread operator to populate a function's params
+// const ingredients = [
+//   prompt("Let's make pasta! Ingredient 1?"),
+//   prompt("Let's make pasta! Ingredient 2?"),
+//   prompt("Let's make pasta! Ingredient 3?"),
+// ];
+// console.log(ingredients);
+
+// restaurant.orderPasta(...ingredients);
+
+// Objects
+
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Guiseppe' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurant.name);
+console.log(restaurantCopy.name);
+
+// Lecture on Destructuirng Objects
+/* 
 
 restaurant.orderDelivery({
   time: '22:30',
@@ -47,7 +104,6 @@ restaurant.orderDelivery({
   address: 'Via del Sola 21',
   starterIndex: 1,
 });
-// Lecture on Destructuirng Objects
 
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
@@ -70,13 +126,13 @@ const obj = { a: 23, b: 7, c: 14 };
 // Must wrap in parenthasis or JS will see { } and expect a code block
 ({ a, b } = obj);
 console.log(a, b);
-
+ */
 // Nested objects
 
-const {
-  fri: { open, close },
-} = openingHours;
-console.log(open, close);
+// const {
+//   fri: { open, close },
+// } = openingHours;
+// console.log(open, close);
 
 // Lecture on Destructuring Arrays
 /* 
