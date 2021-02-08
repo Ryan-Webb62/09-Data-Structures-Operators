@@ -44,8 +44,19 @@ const restaurant = {
   },
 };
 
+// Lecture on nullish coalescing Operator (??)
+
+restaurant.numGuests = 0;
+const guests = restaurant.numGuests || 10;
+console.log(guests);
+
+//  Nullish values: null or undefined (NOT 0 or '')
+const guestsCorrect = restaurant.numGuests ?? 10;
+console.log(guestsCorrect);
+
 // Short circuiting (&& and ||)
 // Logical operators can use any data type, return any data type, short circuit evaluations
+/* 
 console.log('-----------OR------------------');
 console.log(3 || 'Jonas');
 console.log('' || 'Jonas');
@@ -70,6 +81,8 @@ if (restaurant.orderPizza) {
 }
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'pepperoni');
+ */
+
 // Lecture on the rest pattern
 /* 
 // 1. Destructuring _________________________________
