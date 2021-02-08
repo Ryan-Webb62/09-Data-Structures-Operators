@@ -44,8 +44,34 @@ const restaurant = {
   },
 };
 
-// Lecture on the rest pattern
+// Short circuiting (&& and ||)
+// Logical operators can use any data type, return any data type, short circuit evaluations
+console.log('-----------OR------------------');
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+console.log(undefined || null || '' || 0 || 'Hello');
 
+restaurant.numGuests = 0;
+const guests1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guests1);
+
+const guests2 = restaurant.numGuests || 10;
+console.log(guests2);
+console.log('-----------AND------------------');
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+console.log('Hello' && 23 && null && 'Jonas');
+
+// Practicle example to test for exsistance
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'pepperoni');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'pepperoni');
+// Lecture on the rest pattern
+/* 
 // 1. Destructuring _________________________________
 
 // Spread, because it is on the RIGHT side of =
@@ -82,7 +108,7 @@ add(...x);
 
 restaurant.orderPizza('Mushrooms', 'onions', 'olives', 'spinach');
 restaurant.orderPizza('mushrooms');
-
+ */
 // Lecture on the Spread Operator ...
 /* 
 const arr = [7, 8, 9];
