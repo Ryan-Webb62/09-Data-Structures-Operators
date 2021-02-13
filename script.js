@@ -44,6 +44,87 @@ const restaurant = {
   },
 };
 
+// ------ Challenge 1 -------------
+
+// Data
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+  printGoals: function (...players) {
+    for (let i = 0; i < players.length; i++) {
+      console.log(players[i]);
+    }
+    console.log(players.length);
+  },
+};
+//1.
+const [players1, players2] = game.players;
+//2.
+const [gk, ...fieldPlayers] = players1;
+//3.
+const allPlayers = [...players1, ...players2];
+//4.
+const players1Final = [...players1, 'Thiago', 'Coutinho', 'Perisic'];
+//5.
+const { team1, x: draw, team2 } = game.odds;
+//6.
+game.printGoals('Davies', 'Muller', 'Lewandowski', 'Kimmich');
+console.log('--------With game.scored----------');
+game.printGoals(...game.scored);
+//7.
+const teamOneMessage = function () {
+  console.log('Team One Wins');
+};
+
+const teamTwoMessage = function () {
+  console.log('Team Two Wins');
+};
+const teamDrawMessage = function () {
+  console.log('Game was a draw!');
+};
+console.log('-----------Win Eval----------');
+
+team1 < team2 && console.log('Team one is more likely to win');
+
+team2 < team1 && console.log('Team two is more likely to win');
+
+/* 
 // Lecture on nullish coalescing Operator (??)
 
 restaurant.numGuests = 0;
@@ -53,6 +134,7 @@ console.log(guests);
 //  Nullish values: null or undefined (NOT 0 or '')
 const guestsCorrect = restaurant.numGuests ?? 10;
 console.log(guestsCorrect);
+ */
 
 // Short circuiting (&& and ||)
 // Logical operators can use any data type, return any data type, short circuit evaluations
@@ -82,7 +164,6 @@ if (restaurant.orderPizza) {
 
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'pepperoni');
  */
-
 // Lecture on the rest pattern
 /* 
 // 1. Destructuring _________________________________
