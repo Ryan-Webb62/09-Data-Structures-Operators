@@ -46,8 +46,31 @@ const restaurant = {
     console.log(mainIngredent, otherIngredents);
   },
 };
-//---------Optional Chaining (?.)----
+//---------Looping Objects: Object Keys, Values, and Entries -----------------
+// Property NAMES
+const properties = Object.keys(openingHours);
+// console.log(properties);
 
+let openStr = `We are open on ${properties.length} days: `;
+
+for (const day of properties) {
+  openStr += `${day}, `;
+}
+// console.log(openStr);
+
+// Property Values
+const values = Object.values(openingHours);
+// console.log(values);
+
+// Entrie object
+const entries = Object.entries(openingHours);
+// console.log(entries);
+
+for (const [day, { open, close }] of entries) {
+  console.log(`On ${day} we open at ${open} and close at ${close}`);
+}
+//---------Optional Chaining (?.)----
+/* 
 if (restaurant.openingHours && restaurant.openingHours.mon)
   console.log(restaurant.openingHours.mon.open);
 // WITHOUT optional chaining - get error
@@ -71,7 +94,7 @@ console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
 // Arrays
 const users = [{ name: 'Jonas', email: 'hello@jonas.io' }];
 console.log(users[0]?.name ?? 'User array empty');
-
+ */
 //---------The for-of Loop----------
 /* 
 const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
