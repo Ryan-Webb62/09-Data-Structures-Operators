@@ -46,7 +46,77 @@ const restaurant = {
     console.log(mainIngredent, otherIngredents);
   },
 };
+//-----------Challenge 2 ------------------------
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+// 1.
+const goalsScored = [...game.scored];
+// console.log(goalsScored.entries());
+for (const [i, player] of goalsScored.entries()) {
+  console.log(`Goal: ${i + 1}: ${player}`);
+}
+// 2.
+const oddsValues = Object.values(game.odds);
+let average = 0;
+for (const odd of oddsValues) {
+  average += odd;
+}
+average /= oddsValues.length;
+console.log(average);
+
+// 3.
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `${team}`;
+  console.log(`The odds of ${game[teamStr]} winning are ${odd}`);
+}
+// Bonus
+const scorers = {};
+for (const player of game.scored) {
+  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+}
+console.log(scorers);
+// console.log(scorers);
 //---------Looping Objects: Object Keys, Values, and Entries -----------------
+/* 
 // Property NAMES
 const properties = Object.keys(openingHours);
 // console.log(properties);
@@ -68,7 +138,8 @@ const entries = Object.entries(openingHours);
 
 for (const [day, { open, close }] of entries) {
   console.log(`On ${day} we open at ${open} and close at ${close}`);
-}
+} 
+*/
 //---------Optional Chaining (?.)----
 /* 
 if (restaurant.openingHours && restaurant.openingHours.mon)
