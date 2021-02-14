@@ -43,7 +43,18 @@ const restaurant = {
     console.log(mainIngredent, otherIngredents);
   },
 };
+//---------The for-of Loop----------
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
 
+for (const item of menu) console.log(item);
+
+// for (const item of menu.entries()) console.log(item);
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+/* 
 // ------ Challenge 1 -------------
 
 // Data
@@ -123,7 +134,7 @@ console.log('-----------Win Eval----------');
 team1 < team2 && console.log('Team one is more likely to win');
 
 team2 < team1 && console.log('Team two is more likely to win');
-
+ */
 /* 
 // Lecture on nullish coalescing Operator (??)
 
