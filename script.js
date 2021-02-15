@@ -46,7 +46,42 @@ const restaurant = {
     console.log(mainIngredent, otherIngredents);
   },
 };
+//-------------Sets------------------------------
+const ordersSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(ordersSet);
+
+console.log(new Set('Jonas'));
+
+console.log(ordersSet.size);
+console.log(ordersSet.has('Pizza'));
+console.log(ordersSet.has('Bread'));
+ordersSet.add('Garlic Bread');
+ordersSet.add('Garlic Bread');
+ordersSet.delete('Risotto');
+// ordersSet.clear();
+console.log(ordersSet);
+
+for (const order of ordersSet) {
+  console.log(order);
+}
+
+// Example use case remove duplicates from arrays
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+);
+console.log(new Set('jonasschmedtmann').size);
 //-----------Challenge 2 ------------------------
+/* 
 const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
@@ -89,31 +124,30 @@ const game = {
 };
 
 // 1.
-const goalsScored = [...game.scored];
-// console.log(goalsScored.entries());
-for (const [i, player] of goalsScored.entries()) {
-  console.log(`Goal: ${i + 1}: ${player}`);
+for (const [i, player] of game.scored.entries()) {
+  console.log(`Goal ${i + 1}: ${player}`);
 }
 // 2.
-const oddsValues = Object.values(game.odds);
 let average = 0;
+const oddsValues = Object.values(game.odds);
 for (const odd of oddsValues) {
   average += odd;
 }
 average /= oddsValues.length;
 console.log(average);
-
 // 3.
-for (const [team, odd] of Object.entries(game.odds)) {
-  const teamStr = team === 'x' ? 'draw' : `${team}`;
-  console.log(`The odds of ${game[teamStr]} winning are ${odd}`);
+for (const [team, odds] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'a draw' : `${game[team]} winning`;
+  console.log(`Odds of ${teamStr} are: ${odds}`);
 }
+
 // Bonus
 const scorers = {};
 for (const player of game.scored) {
-  scorers[player] ? scorers[player]++ : (scorers[player] = 1);
+  scorers[player] ? (scorers[player] += 1) : (scorers[player] = 1);
 }
 console.log(scorers);
+ */
 // console.log(scorers);
 //---------Looping Objects: Object Keys, Values, and Entries -----------------
 /* 
