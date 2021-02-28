@@ -46,7 +46,40 @@ const restaurant = {
     console.log(mainIngredent, otherIngredents);
   },
 };
+//--------------Working with Strings Part I ------------
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log(plane[3]);
+console.log('B737'[0]);
+console.log(airline.length);
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('Portugal')); // Case sensitive will return -1 if not found
+
+console.log(airline.slice(4));
+console.log(airline.slice(4, 7));
+
+console.log(airline.slice(0, airline.indexOf(' ')));
+console.log(airline.slice(airline.lastIndexOf(' ') + 1));
+
+console.log(airline.slice(-2)); // negative start positions will start slice at the end
+console.log(airline.slice(1, -1));
+
+const checkMiddleSeat = function (seat) {
+  // B and E are middle seats
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') return console.log('Middle Seat');
+  else console.log('You got lucky!');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
 //------------Coding Challenge 3-----------------
+/* 
 const gameEvents = new Map([
   [17, '⚽ GOAL'],
   [36, '🔁 Substitution'],
@@ -88,7 +121,7 @@ for (const [min, event] of gameEvents) {
   const half = min < 45 ? 'First Half' : 'Second Half';
   console.log(`[${half}] ${min}: ${event}`);
 }
-
+ */
 //-------------Maps: Iteration-------------------
 /* 
 const question = new Map([
