@@ -46,7 +46,72 @@ const restaurant = {
     console.log(mainIngredent, otherIngredents);
   },
 };
+//--------------Working with Strings Part II -----------
+const airline = 'TAP Air Portugal';
+
+console.log(airline.toLowerCase());
+console.log(airline.toUpperCase());
+
+// fix capitalization
+const passenger = 'jONAs';
+
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect);
+
+// Compairing emails
+
+const email = 'hello@jonas.io';
+const loginEmail = '  Hello@Jonas.Io \n';
+
+// const lowerEmail = loginEmail.toLowerCase();
+// const trimmedEmail = lowerEmail.trim();
+// console.log(trimmedEmail);
+
+const normalizedEmail = loginEmail.toLowerCase().trim();
+console.log(normalizedEmail);
+console.log(email === normalizedEmail);
+
+// Replacing
+
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS);
+
+const announcement =
+  'All passengers come to boarding door 23, boarding door 23';
+console.log(announcement.replace('door', 'gate'));
+// replaceAll is a new method
+console.log(announcement.replaceAll('door', 'gate'));
+// can also use a Regular Expression
+console.log(announcement.replaceAll(/door/g, 'gate'));
+// Booleans
+const plane = 'Airbus A320neo';
+console.log(plane.includes('A320'));
+console.log(plane.includes('Boeing'));
+console.log(plane.startsWith('Air'));
+
+if (plane.startsWith('Airbus') && plane.endsWith('neo')) {
+  console.log('Part of the NEW Airbus Family!');
+}
+
+// Practice
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are not allowed on board!');
+  } else {
+    console.log('Welcome aboard!');
+  }
+};
+
+checkBaggage('I have gum, a laptop, and a pocket Knife');
+checkBaggage('I have socks a cammera.');
+checkBaggage('Got some snacks and a gun for protection.');
+
 //--------------Working with Strings Part I ------------
+/* 
 const airline = 'TAP Air Portugal';
 const plane = 'A320';
 console.log(plane[0]);
@@ -78,6 +143,7 @@ const checkMiddleSeat = function (seat) {
 checkMiddleSeat('11B');
 checkMiddleSeat('23C');
 checkMiddleSeat('3E');
+ */
 //------------Coding Challenge 3-----------------
 /* 
 const gameEvents = new Map([
