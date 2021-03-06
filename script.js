@@ -46,7 +46,64 @@ const restaurant = {
     console.log(mainIngredent, otherIngredents);
   },
 };
+//--------------Working with Strings Part III------------
+
+console.log('a+very+nice+string'.split('+'));
+console.log('Jonas Schmedtmann'.split(' '));
+
+const [firstName, lastName] = 'Jonas Schmedtmann'.split(' ');
+console.log(firstName);
+console.log(lastName);
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const word of names) {
+    // namesUpper.push(word[0].toUpperCase() + word.slice(1));
+
+    namesUpper.push(word.replace(word[0], word[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('Jessica anne smith dumars');
+capitalizeName('jonas schmedtmann');
+capitalizeName('marco burger schilling');
+
+// Padding a string
+const message = 'Go to gate 23!';
+console.log(message.padStart(25, '+').padEnd(30, '+'));
+console.log('Jonas'.padStart(25, '+').padEnd(30, '+'));
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(64637836));
+console.log(maskCreditCard(4337846459007384));
+console.log(maskCreditCard('43378464593334374747'));
+
+// Repeat
+
+const message2 = 'Bad weather... All Departures Delayed... ';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'✈️'.repeat(n)}`);
+};
+
+planesInLine(5);
+planesInLine(3);
+planesInLine(12);
+
 //--------------Working with Strings Part II -----------
+/* 
 const airline = 'TAP Air Portugal';
 
 console.log(airline.toLowerCase());
@@ -109,7 +166,7 @@ const checkBaggage = function (items) {
 checkBaggage('I have gum, a laptop, and a pocket Knife');
 checkBaggage('I have socks a cammera.');
 checkBaggage('Got some snacks and a gun for protection.');
-
+ */
 //--------------Working with Strings Part I ------------
 /* 
 const airline = 'TAP Air Portugal';
