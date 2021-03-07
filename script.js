@@ -46,8 +46,30 @@ const restaurant = {
     console.log(mainIngredent, otherIngredents);
   },
 };
-//--------------Working with Strings Part III------------
+//---------------Challenge #4 ---------------------------
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
 
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', function () {
+  const text = document.querySelector('textarea').value;
+  const lines = text.split('\n');
+
+  // iterate through array
+  for (const [index, line] of lines.entries()) {
+    // split by underscore and make everything lower case
+    let [firstWord, secondWord] = line.toLowerCase().trim().split('_');
+    // capitilize first letter of second word
+    secondWord = secondWord[0].toUpperCase() + secondWord.slice(1);
+    // join words to make camelCase and trim
+    const cammelCase = [firstWord, secondWord].join('').padEnd(20);
+    // Output with checkmark repeated by index + 1
+    console.log(cammelCase, '✅'.repeat(index + 1));
+  }
+});
+//--------------Working with Strings Part III------------
+/* 
 console.log('a+very+nice+string'.split('+'));
 console.log('Jonas Schmedtmann'.split(' '));
 
@@ -101,7 +123,7 @@ const planesInLine = function (n) {
 planesInLine(5);
 planesInLine(3);
 planesInLine(12);
-
+ */
 //--------------Working with Strings Part II -----------
 /* 
 const airline = 'TAP Air Portugal';
